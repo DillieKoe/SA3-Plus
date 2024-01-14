@@ -1,0 +1,17 @@
+5V24
+
+5V24
+
+
+Name: 5V24
+Type: Medium-range, SARH, surface-to-air-
+missile for SA-3
+Developed: USSR
+Guidance: Semi-active radar
+Warhead weight, kg: 52
+Weight, kg: 912
+G limit: 8
+Length, m: 5.89
+Body diameter, m: 0.55
+Range, km: 14
+Maximum Mach number: 2
