@@ -47,6 +47,6 @@ end
 
 weapon_file("/Database/Weapon/5V24.lua")
 
-vehicle_file("/Database/Vehicle/5P73 V-600P LN.lua")
+vehicle_file("/Database/SAM/5P73_V-600P_LN.lua")
 
 plugin_done()

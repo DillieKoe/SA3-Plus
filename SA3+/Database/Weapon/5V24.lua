@@ -5,17 +5,17 @@ V600P = {
 	wsTypeOfWeapon 	= {wsType_Weapon,wsType_Missile,wsType_SA_Missile,WSTYPE_PLACEHOLDER},
 
     Escort       = 3,
-    Head_Type    = 7,
+    Head_Type    = 6,
     sigma        = {50, 50, 50}, --aiming error on target
     M            = 912.0, --missile mass in KG
     H_max        = 10000.0, --maximum flight altitude
     H_min        = 200,  --minimum flight altitude
     Diam         = 550.0, --diameter
     Cx_pil       = 1,
-    D_max        = 10000.0,  -- maximum launch range at 0 height should be 10k
-    D_min        = 6000.0, --minimum launch range should be 6k
+    D_max        = 13000.0,  -- maximum launch range at 0 height
+    D_min        = 6000.0, --minimum launch range
     Head_Form    = 1,
-    Life_Time    = 80.0,
+    Life_Time    = 26.0,
     Nr_max       = 8,
     v_min        = 170.0, --minimum speed
     v_mid        = 430.0, --average speed
@@ -23,7 +23,7 @@ V600P = {
     t_b          = 0.0, --engine start delay time
     t_acc        = -1, --engine operating time
     t_marsh      = -1, --time in flight
-    Range_max    = 34000.0, -- maximum launch range at maximum height (HHQ9: 100km range) should be 14k
+    Range_max    = 25000.0, -- maximum launch range at maximum height (HHQ9: 100km range)
     H_min_t      = 200.0, --minimum target height
     Fi_start     = 3.14152, -- angle of tracking at firing
     Fi_rak       = 3.14152,
@@ -38,12 +38,11 @@ V600P = {
 	X_back_acc 	 = -2.49,
     Y_back_acc 	 = 0.0,
     Z_back_acc 	 = 0.0,		
-    Reflection   = 10.2, --effective surface of radio reflection, square meters (like 5V55)
-    KillDistance = 12.5,
+    Reflection   = 0.2, --effective surface of radio reflection, square meters (like 5V55)
+    KillDistance = 40.0,
     ccm_k0       = 2.0,
 	
-	--hasDetachableAccelerator_ = 1,
-	warhead = enhanced_a2a_warhead(52),
+	warhead = enhanced_a2a_warhead(60),
 
     shape_table_data = {
 		{
@@ -59,7 +58,7 @@ V600P = {
 	
     ModelData = {
         58 ,  -- model params count
-        0.6 ,   -- characteristic square (характеристическая площадь) was
+        1.0 ,   -- characteristic square (характеристическая площадь) 
         
         -- параметры зависимости Сx
 		0.047 , -- The plateau of Cx0 at subsonic speeds (when M << 1).
@@ -70,18 +69,18 @@ V600P = {
 		0.9  , -- The coefficient of the polar curve drop-off (proportional to sqrt(M^2-1)).
 	
 		-- параметры зависимости Cy
-		4.15, -- Cya plateau in subsonic flow (M << 1)
-		3.75, -- Cya bump at supersonic speeds (M >> 1)
-		0.80, -- Rate of decrease (front) behind the shock wave
+		0.385, -- Cya plateau in subsonic flow (M << 1) 4.15
+		0.300, -- Cya bump at supersonic speeds (M >> 1) 3.75
+		0.085, -- Rate of decrease (front) behind the shock wave 0.80
         
-        0.25 , -- 8 Alfa_max  максимальный балансировачный угол, радианы
+        0.8 , -- 8 Alfa_max  максимальный балансировачный угол, радианы
         0.0, --угловая скорость создаваймая моментом газовых рулей
         
         -- Engine data. Time, fuel flow, thrust.    
 --    t_statr        t_b     t_accel     t_march     t_inertial        t_break        t_end            -- Stage
         0.0,        0.0,    3.2,          21.5,        0.0,            0.0,        1.0e9,         -- time of stage, sec
          0.0,        0.0,    87.8,        5.6,        0.0,            0.0,        0.0,           -- fuel flow rate in second, kg/sec(секундный расход массы топлива кг/сек)
-         0.0,        0.0,    150000,    11063,    0.0,            0.0,        0.0,           -- thrust, newtons (adjusted to meet expected speed values)
+         0.0,        0.0,    150000,    8894,    0.0,            0.0,        0.0,           -- thrust, newtons (adjusted to meet expected speed values)
     
          26.0, -- таймер самоликвидации, сек
          80.0, -- время работы энергосистемы, сек
@@ -101,9 +100,9 @@ V600P = {
          0.0, -- безразмерный коэф. эффективности САУ ракеты
          0.0, -- расчет времени полета
           -- DLZ. Данные для рассчета дальностей пуска (индикация на прицеле)
-         23000.0, -- дальность ракурс   180(навстречу) град,  Н=10000м, V=900км/ч, м
-         7500.0, -- дальность ракурс 0(в догон) град,  Н=10000м, V=900км/ч, м
-         23000.0, -- дальность ракурс     180(навстречу) град, Н=1000м, V=900км/ч, м
+         200000.0, -- дальность ракурс   180(навстречу) град,  Н=10000м, V=900км/ч, м
+         75000.0, -- дальность ракурс 0(в догон) град,  Н=10000м, V=900км/ч, м
+         200000.0, -- дальность ракурс     180(навстречу) град, Н=1000м, V=900км/ч, м
          0.2, -- Уменьшение разрешенной дальности пуска при отклонении вектора скорости носителя от линии визирования цели.
          1.0, -- Вертикальная плоскость. Наклон кривой разрешенной дальности пуска в нижнюю полусферу. Уменьшение дальности при стрельбе вниз.
          1.4, -- Вертикальная плоскость. Наклон кривой разрешенной дальности пуска в верхнюю полусферу. Увеличение дальности при стрельбе вверх.

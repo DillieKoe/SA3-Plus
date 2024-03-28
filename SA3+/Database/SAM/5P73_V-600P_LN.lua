@@ -12,6 +12,8 @@ GT.sensor = {};
 set_recursive_metatable(GT.sensor, GT_t.SN_visual);
 GT.sensor.height = 2.707;
 
+GT.snd = {};
+
 --Burning after hit
 GT.visual.fire_size = 0.3; --relative burning size
 GT.visual.fire_pos[1] = 0; -- center of burn at long axis shift(meters)
@@ -41,7 +43,7 @@ GT.WS[ws].LN = {}
 GT.WS[ws].LN[1] = {}
 GT.WS[ws].LN[1].type = 4
 GT.WS[ws].LN[1].distanceMin = 6000
-GT.WS[ws].LN[1].distanceMax = 10000
+GT.WS[ws].LN[1].distanceMax = 13000
 GT.WS[ws].LN[1].ECM_K = -1
 GT.WS[ws].LN[1].reactionTime = 2
 GT.WS[ws].LN[1].min_launch_angle = math.rad(9);
@@ -65,7 +67,7 @@ GT.WS[ws].LN[1].BR = {
                 {connector_name = 'POINT_ROCKET_04'},
 };
 
-GT.Name = "5p73 V-600P ln";
+GT.Name = "5p73_V-600P_ln";
 GT.DisplayName = _("SAM SA-3 (V-600P) S-125 LN");
 GT.DisplayNameShort = _("SA-3 (V-600P)");
 GT.Rate = 5;
