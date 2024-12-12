@@ -46,7 +46,10 @@ local function weapon_file(f)
 end
 
 weapon_file("/Database/Weapon/5V24.lua")
+weapon_file("/Database/Weapon/GunsAndAmmo.lua")
 
 vehicle_file("/Database/SAM/5P73_V-600P_LN.lua")
+vehicle_file("/Database/SAM/5P71_V-600P_LN.lua")
+vehicle_file("/Database/Navy/Bal.lua")
 
 plugin_done()

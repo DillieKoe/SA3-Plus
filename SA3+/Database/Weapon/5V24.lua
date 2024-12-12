@@ -41,7 +41,7 @@ V600P = {
     Reflection   = 0.2, --effective surface of radio reflection, square meters (like 5V55)
     KillDistance = 40.0,
     ccm_k0       = 2.0,
-	
+	seekerGen 	 = 1,
 	warhead = enhanced_a2a_warhead(60),
 
     shape_table_data = {
@@ -58,20 +58,20 @@ V600P = {
 	
     ModelData = {
         58 ,  -- model params count
-        1.0 ,   -- characteristic square (характеристическая площадь) 
+        0.55 ,   -- characteristic square (характеристическая площадь) 
         
         -- параметры зависимости Сx
 		0.047 , -- The plateau of Cx0 at subsonic speeds (when M << 1).
 		0.082 , -- The height of the wave drag peak.
 		0.018 , -- The slope of the shock front approaching the wave drag peak.
-		0.041 , -- The plateau of Cx0 at supersonic speeds (when M >> 1).)
+		0.064 , -- The plateau of Cx0 at supersonic speeds (when M >> 1).)
 		0.2  , -- The slope of the drag reduction after the wave drag peak. 
 		0.9  , -- The coefficient of the polar curve drop-off (proportional to sqrt(M^2-1)).
 	
 		-- параметры зависимости Cy
-		0.385, -- Cya plateau in subsonic flow (M << 1) 4.15
-		0.300, -- Cya bump at supersonic speeds (M >> 1) 3.75
-		0.085, -- Rate of decrease (front) behind the shock wave 0.80
+		0.0385, -- Cya plateau in subsonic flow (M << 1) 4.15
+		0.0300, -- Cya bump at supersonic speeds (M >> 1) 3.75
+		0.0085, -- Rate of decrease (front) behind the shock wave 0.80
         
         0.8 , -- 8 Alfa_max  максимальный балансировачный угол, радианы
         0.0, --угловая скорость создаваймая моментом газовых рулей
@@ -80,12 +80,12 @@ V600P = {
 --    t_statr        t_b     t_accel     t_march     t_inertial        t_break        t_end            -- Stage
         0.0,        0.0,    3.2,          21.5,        0.0,            0.0,        1.0e9,         -- time of stage, sec
          0.0,        0.0,    87.8,        5.6,        0.0,            0.0,        0.0,           -- fuel flow rate in second, kg/sec(секундный расход массы топлива кг/сек)
-         0.0,        0.0,    150000,    8894,    0.0,            0.0,        0.0,           -- thrust, newtons (adjusted to meet expected speed values)
+         0.0,        0.0,    164011,    9810,    0.0,            0.0,        0.0,           -- thrust, newtons 
     
          26.0, -- таймер самоликвидации, сек
          80.0, -- время работы энергосистемы, сек
          0, -- абсолютная высота самоликвидации, м
-         0.0, -- время задержки включения управления (маневр отлета, безопасности), сек
+         3.2, -- время задержки включения управления (маневр отлета, безопасности), сек
          1.0e9, -- дальность до цели в момент пуска, при превышении которой ракета выполняется маневр "горка", м
          1.0e9, -- дальность до цели, при которой маневр "горка" завершается и ракета переходит на чистую пропорциональную навигацию (должен быть больше или равен предыдущему параметру), м 
          0.0,  -- синус угла возвышения траектории набора горки
